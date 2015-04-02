@@ -11,6 +11,9 @@
 
 set $mod Mod1
 
+exec compton -b
+exec source ${HOME}/.fehbg
+
 font pango:DejaVu Sans Mono Bold for Powerline 10
 font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 11
 
