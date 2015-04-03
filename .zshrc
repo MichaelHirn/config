@@ -59,10 +59,6 @@ export ARCHFLAGS="-arch x86_64"
 # load own completion functions
 fpath=(~/.zsh/completion $fpath)
 
-# completion
-autoload -U compinit
-compinit
-
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
@@ -72,3 +68,16 @@ for function in ~/.zsh/functions/*; do
 if which rbenv &>/dev/null ; then
   eval "$(rbenv init - --no-rehash)"
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/home/mj/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables bash completion for gcloud.
+fpath=(~/google-cloud-sdk/completion.zsh.inc $fpath)
+
+# export Gcloud Python2 path
+export CLOUDSDK_PYTHON=/usr/bin/python2
+
+# completion at the end
+autoload -U compinit
+compinit
