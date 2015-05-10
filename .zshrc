@@ -42,6 +42,10 @@ export EDITOR=$VISUAL
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
+# Rbenv ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
